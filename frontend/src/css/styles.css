@@ -131,7 +131,7 @@ th {
   cursor: pointer;
 }
 
-/* Overview Page */
+/* Dashboard Page */
 .overviewcontainer {
   width: 100%; /* Ensure it spans the full width of the viewport */
   padding: 20px;
@@ -144,15 +144,7 @@ th {
   box-sizing: border-box; /* Include padding and border in the width */
 }
 
-.container {
-  max-width: 1200px; /* Fixed width of the container */
-  margin: 0 auto; /* Center the container horizontally */
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box; /* Include padding and border in the width */
-}
+
 
 .overview {
   display: flex;
@@ -164,15 +156,20 @@ th {
 }
 
 .card {
-  flex: 1 1 200px;
-  padding: 20px;
+  flex: 1;
+  min-width: 200px; /* Minimum width of the card */
+  max-width: 200px; /* Maximum width of the card */
+  height: 150px; /* Fixed height of the card */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: #000000;
-  font-size: 20px;
+  color: white;
+  font-size: 18px;
   font-weight: bold;
+  text-align: center;
 }
 
 .blue {

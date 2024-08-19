@@ -5,11 +5,13 @@ import '../css/styles.css'; // Ensure this is imported to apply the styles
 // Data fetching URL (update with actual path if needed)
 const dataUrl = '/data.json'; // Adjust the path based on where the JSON file is served
 
-const Overview = ({ Toggle }) => {
+const Dashboard = ({ Toggle }) => {
   const [data, setData] = useState({
     totalPackages: 0,
     completedBuilds: 0,
-    failedBuilds: 0,
+    rhel: 0,
+    sles:0,
+    ubuntu: 0 ,
     inProgress: 0,
   });
 
@@ -23,7 +25,7 @@ const Overview = ({ Toggle }) => {
   return (
     <div className="overviewcontainer">
       <Nav Toggle={Toggle} />
-      <div className="container">
+      <div className="card-container">
         <h1>Overview</h1>
         <div className="overview">
           <div className="card blue">
@@ -35,8 +37,16 @@ const Overview = ({ Toggle }) => {
             <p>{data.completedBuilds}</p>
           </div>
           <div className="card red">
-            <h2>Failed Builds</h2>
-            <p>{data.failedBuilds}</p>
+            <h2>Failed Builds rhel</h2>
+            <p>{data.rhel}</p>
+          </div>
+          <div className="card red">
+            <h2>Failed Builds sles</h2>
+            <p>{data.sles}</p>
+          </div>
+          <div className="card red">
+            <h2>Failed Builds ubuntu</h2>
+            <p>{data.ubuntu}</p>
           </div>
           <div className="card yellow">
             <h2>In Progress</h2>
@@ -48,4 +58,4 @@ const Overview = ({ Toggle }) => {
   );
 };
 
-export default Overview;
+export default Dashboard;
