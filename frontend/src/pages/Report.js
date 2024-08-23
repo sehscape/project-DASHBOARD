@@ -6,7 +6,7 @@ const Report = ({ Toggle }) => {
   const [jobs, setJobs] = useState([]);
   const [selectedJob, setSelectedJob] = useState(null);
   const [recipes, setRecipes] = useState([]);
-  const [comment, setComment] = useState(''); // State for the comment
+//  const [comment, setComment] = useState(''); // State for the comment
 
   useEffect(() => {
     fetch('http://localhost:4000/getjobs')
@@ -28,16 +28,6 @@ const Report = ({ Toggle }) => {
     setSelectedJob(null);
   };
 
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
-  };
-
-  const handleCommentSubmit = () => {
-    // Handle comment submission (e.g., save it or send it to a server)
-    console.log('Comment submitted:', comment);
-    setComment(''); // Clear the comment field
-  };
-
   const chunkRecipes = (recipes, chunkSize) => {
     const result = [];
     for (let i = 0; i < recipes.length; i += chunkSize) {
@@ -53,8 +43,6 @@ const Report = ({ Toggle }) => {
       <Nav Toggle={Toggle} />
 
       <div className="header-container">
-        <h1>Jenkins Summary Report</h1>
-
         <div className="search-bar">
           <input type="text" placeholder="Enter Package Name" />
           <button className="button">Search</button>
@@ -121,19 +109,10 @@ const Report = ({ Toggle }) => {
               </div>
             </div>
 
-            {/* Comment Section */}
+           {/* Non-editable Comment Section 
             <div className="comment-section">
-              <textarea
-                placeholder="Add your comment here..."
-                value={comment}
-                onChange={handleCommentChange}
-                rows="4"
-                cols="50"
-              />
-              <button className="submit-comment-btn" onClick={handleCommentSubmit}>
-                Submit Comment
-              </button>
-            </div>
+              <p className="comment-text">{comment}</p>
+            </div>  */}
           </div>
         )}
       </div>

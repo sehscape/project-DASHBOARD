@@ -5,7 +5,7 @@ import '../css/styles.css'; // Ensure this is imported to apply the styles
 // Data fetching URL (update with actual path if needed)
 const dataUrl = '/data.json'; // Adjust the path based on where the JSON file is served
 
-const Dashboard = ({ Toggle }) => {
+const Overview = ({ Toggle }) => {
   const [data, setData] = useState({
     totalPackages: 0,
     completedBuilds: 0,
@@ -25,7 +25,7 @@ const Dashboard = ({ Toggle }) => {
   return (
     <div className="overviewcontainer">
       <Nav Toggle={Toggle} />
-      <div className="card-container">
+      <div className="container">
         <h1>Overview</h1>
         <div className="overview">
           <div className="card blue">
@@ -58,4 +58,4 @@ const Dashboard = ({ Toggle }) => {
   );
 };
 
-export default Dashboard;
+export default Overview;

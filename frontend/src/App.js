@@ -5,7 +5,6 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./pages/Dashboard";
 import Report from "./pages/Report";
 import Recipe from "./pages/Recipe";
-import Calendar from "./pages/Calendar";
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -29,10 +28,9 @@ function App() {
           <div className="col">
             <Routes>
               <Route path="/" element={<Dashboard Toggle={Toggle} />} />
-              <Route path="/Dashboard" element={<Dashboard Toggle={Toggle} />} />
+              <Route path="/dashboard" element={<Dashboard Toggle={Toggle} />} />
               <Route path="/report" element={<Report Toggle={Toggle} />} />
               <Route path="/recipe" element={<Recipe Toggle={Toggle} />} />
-              <Route path="/calendar" element={<Calendar Toggle={Toggle} />} />
             </Routes>
           </div>
         </div>
